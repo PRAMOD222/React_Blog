@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React.js Blog - State</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hooks.html">Hooks</a></li>
+            <li><a href="state.html">State</a></li>
+            <li><a href="props.html">Props</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li><a href="router.html">React Router</a></li>
+            <li><a href="dom.html">React DOM</a></li>
+            <li><a href="context.html">Context</a></li>
+            <li><a href="lifecycle.html">Lifecycle Methods</a></li>
+            <li><a href="virtualdom.html">Virtual DOM</a></li>
+            <li><a href="styling.html">Styling in React</a></li>
+            <li><a href="forms.html">Forms and User Input</a></li>
+            <li><a href="ajax.html">AJAX and Data Fetching</a></li>
+            <li><a href="errorhandling.html">Error Handling</a></li>
+            <li><a href="testing.html">Testing in React</a></li>
+            <li><a href="performance.html">Performance Optimization</a></li>
+            <li><a href="deployment.html">Deployment Strategies</a></li>
+            <li><a href="redux.html">Redux State Management</a></li>
+            <li><a href="contextapi.html">Context API</a></li>
+            <li><a href="hooksadvanced.html">Advanced Hooks</a></li>
+          </ul>
+    </div>
+    <div class="content">
+      <h1>State in React.js</h1>
+      <p>State is a fundamental concept in React that represents the data specific to a component. It allows you to create dynamic and interactive components by managing and updating data.</p>
+
+      <h2>Why Use State?</h2>
+      <p>State enables components to store and manage data that can change over time. By using state, you can update the component's UI based on user interactions, API responses, or any other event that triggers a data change.</p>
+
+      <h2>Using State in React</h2>
+      <p>In React, you can manage state in two ways:</p>
+      <ul>
+        <li><strong>Class Components:</strong> In class components, you can use the `this.state` property to define and update the component's state.</li>
+        <li><strong>Functional Components with Hooks:</strong> With the introduction of React Hooks, functional components can now have state as well. You can use the `useState` hook to manage state in functional components.</li>
+      </ul>
+
+      <h2>Example: Using State in a Class Component</h2>
+      <p>Here's an example of managing state in a class component:</p>
+
+      <pre><code class="language-jsx">
+import React from 'react';
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  increment() {
+    this.setState({ count: this.state.count + 1 });
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Count: {this.state.count}&lt;/p&gt;
+        &lt;button onClick={() => this.increment()}&gt;Increment&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default Counter;
+      </code></pre>
+
+      <p>In the above example, the `Counter` class component initializes the state with a `count` property set to 0. The `increment` method updates the state by using the `setState` function. The current state is rendered in the UI, and clicking the "Increment" button increases the count.</p>
+
+      <h2>Example: Using State with the useState Hook</h2>
+      <p>Here's an equivalent example of managing state using the `useState` hook in a functional component:</p>
+
+      <pre><code class="language-jsx">
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={increment}&gt;Increment&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Counter;
+      </code></pre>
+
+      <p>In this example, the `useState` hook is used to declare the `count` state variable with an initial value of 0. The `setCount` function is used to update the `count` value. Clicking the "Increment" button will update and render the updated count value in the UI.</p>
+
+      <p>Both examples demonstrate how to use state in React components, either with class components or functional components using hooks. Choose the approach that suits your project and development style.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-jsx.min.js"></script>
+</body>
+</html>

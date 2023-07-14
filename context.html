@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React.js Blog - Context</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hooks.html">Hooks</a></li>
+            <li><a href="state.html">State</a></li>
+            <li><a href="props.html">Props</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li><a href="router.html">React Router</a></li>
+            <li><a href="dom.html">React DOM</a></li>
+            <li><a href="context.html">Context</a></li>
+            <li><a href="lifecycle.html">Lifecycle Methods</a></li>
+            <li><a href="virtualdom.html">Virtual DOM</a></li>
+            <li><a href="styling.html">Styling in React</a></li>
+            <li><a href="forms.html">Forms and User Input</a></li>
+            <li><a href="ajax.html">AJAX and Data Fetching</a></li>
+            <li><a href="errorhandling.html">Error Handling</a></li>
+            <li><a href="testing.html">Testing in React</a></li>
+            <li><a href="performance.html">Performance Optimization</a></li>
+            <li><a href="deployment.html">Deployment Strategies</a></li>
+            <li><a href="redux.html">Redux State Management</a></li>
+            <li><a href="contextapi.html">Context API</a></li>
+            <li><a href="hooksadvanced.html">Advanced Hooks</a></li>
+          </ul>
+    </div>
+    <div class="content">
+      <h1>Context in React.js</h1>
+      <p>Context provides a way to share data between components in a React application without explicitly passing props through intermediate components. It allows you to avoid "prop drilling" and simplifies state management.</p>
+
+      <h2>Why Use Context?</h2>
+      <p>Context is useful in scenarios where data needs to be accessed by multiple components at different levels in the component tree. Instead of passing the data through each component in the hierarchy, Context allows you to define data at a higher level and consume it in any component below that level.</p>
+
+      <h2>Using Context in React</h2>
+      <p>In React, you can create and use Context using the `React.createContext` function and the `Context.Provider` and `Context.Consumer` components.</p>
+
+      <h2>Example: Creating and Using Context</h2>
+      <p>Here's an example of creating and using Context in a React application:</p>
+
+      <pre><code class="language-jsx">
+import React from 'react';
+
+const ThemeContext = React.createContext();
+
+class App extends React.Component {
+  render() {
+    return (
+      &lt;ThemeContext.Provider value="dark"&gt;
+        &lt;Toolbar /&gt;
+      &lt;/ThemeContext.Provider&gt;
+    );
+  }
+}
+
+function Toolbar() {
+  return (
+    &lt;div&gt;
+      &lt;ThemedButton /&gt;
+    &lt;/div&gt;
+  );
+}
+
+class ThemedButton extends React.Component {
+  static contextType = ThemeContext;
+  render() {
+    return &lt;button className={this.context} /&gt;;
+  }
+}
+
+export default App;
+      </code></pre>
+
+      <p>In the above example, the `ThemeContext` is created using the `React.createContext` function. The `App` component renders a `Toolbar` component wrapped in a `ThemeContext.Provider`, passing the value of `"dark"` as the context value.</p>
+
+      <p>The `Toolbar` component renders a `ThemedButton` component, which accesses the context value using the `static contextType` property and renders a button with the corresponding theme class.</p>
+
+      <h2>Conclusion</h2>
+      <p>Context in React provides an elegant solution for sharing data between components. It simplifies the management of shared state and enables components to consume data without the need for intermediate prop passing.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-jsx.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React.js Blog - Lifecycle</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hooks.html">Hooks</a></li>
+            <li><a href="state.html">State</a></li>
+            <li><a href="props.html">Props</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li><a href="router.html">React Router</a></li>
+            <li><a href="dom.html">React DOM</a></li>
+            <li><a href="context.html">Context</a></li>
+            <li><a href="lifecycle.html">Lifecycle Methods</a></li>
+            <li><a href="virtualdom.html">Virtual DOM</a></li>
+            <li><a href="styling.html">Styling in React</a></li>
+            <li><a href="forms.html">Forms and User Input</a></li>
+            <li><a href="ajax.html">AJAX and Data Fetching</a></li>
+            <li><a href="errorhandling.html">Error Handling</a></li>
+            <li><a href="testing.html">Testing in React</a></li>
+            <li><a href="performance.html">Performance Optimization</a></li>
+            <li><a href="deployment.html">Deployment Strategies</a></li>
+            <li><a href="redux.html">Redux State Management</a></li>
+            <li><a href="contextapi.html">Context API</a></li>
+            <li><a href="hooksadvanced.html">Advanced Hooks</a></li>
+          </ul>
+    </div>
+    <div class="content">
+      <h1>Lifecycle Methods in React.js</h1>
+      <p>Lifecycle methods are special methods provided by React that allow you to perform certain actions at specific points in the life cycle of a component. They enable you to control component initialization, rendering, updating, and destruction.</p>
+
+      <h2>Why Use Lifecycle Methods?</h2>
+      <p>Lifecycle methods allow you to hook into the different stages of a component's life cycle and execute code accordingly. They provide opportunities to perform actions like initializing state, making API calls, updating the UI, or cleaning up resources.</p>
+
+      <h2>Using Lifecycle Methods in React</h2>
+      <p>React provides several lifecycle methods that can be used in class components:</p>
+      <ul>
+        <li><strong>componentDidMount:</strong> Invoked immediately after a component is mounted to the DOM.</li>
+        <li><strong>componentDidUpdate:</strong> Invoked immediately after updating occurs. This method is not called for the initial render.</li>
+        <li><strong>componentWillUnmount:</strong> Invoked immediately before a component is unmounted and destroyed.</li>
+        <li><strong>render:</strong> Invoked to render the component's UI representation.</li>
+        <!-- Add more lifecycle methods as needed -->
+      </ul>
+
+      <h2>Example: Lifecycle Methods</h2>
+      <p>Here's an example that demonstrates the usage of some lifecycle methods:</p>
+
+      <pre><code class="language-jsx">
+import React from 'react';
+
+class ExampleComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  componentDidMount() {
+    console.log('Component mounted');
+  }
+
+  componentDidUpdate() {
+    console.log('Component updated');
+  }
+
+  componentWillUnmount() {
+    console.log('Component will unmount');
+  }
+
+  incrementCount() {
+    this.setState((prevState) => ({
+      count: prevState.count + 1
+    }));
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Count: {this.state.count}&lt;/p&gt;
+        &lt;button onClick={() => this.incrementCount()}&gt;Increment&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default ExampleComponent;
+      </code></pre>
+
+      <p>In the above example, the `ExampleComponent` class component defines the lifecycle methods `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`. The `componentDidMount` method is invoked immediately after the component is mounted to the DOM, `componentDidUpdate` is invoked after updates occur, and `componentWillUnmount` is invoked before the component is unmounted.</p>
+
+      <p>The component also initializes state with a `count` property and provides a method to increment the count value when the button is clicked.</p>
+
+      <h2>Conclusion</h2>
+      <p>Lifecycle methods in React provide powerful hooks to control and manage the life cycle of components. They enable you to perform various actions at specific points in a component's life cycle, allowing for initialization, updating, and cleanup operations.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-jsx.min.js"></script>
+</body>
+</html>

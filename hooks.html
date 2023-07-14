@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React.js Blog - Hooks</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hooks.html">Hooks</a></li>
+            <li><a href="state.html">State</a></li>
+            <li><a href="props.html">Props</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li><a href="router.html">React Router</a></li>
+            <li><a href="dom.html">React DOM</a></li>
+            <li><a href="context.html">Context</a></li>
+            <li><a href="lifecycle.html">Lifecycle Methods</a></li>
+            <li><a href="virtualdom.html">Virtual DOM</a></li>
+            <li><a href="styling.html">Styling in React</a></li>
+            <li><a href="forms.html">Forms and User Input</a></li>
+            <li><a href="ajax.html">AJAX and Data Fetching</a></li>
+            <li><a href="errorhandling.html">Error Handling</a></li>
+            <li><a href="testing.html">Testing in React</a></li>
+            <li><a href="performance.html">Performance Optimization</a></li>
+            <li><a href="deployment.html">Deployment Strategies</a></li>
+            <li><a href="redux.html">Redux State Management</a></li>
+            <li><a href="contextapi.html">Context API</a></li>
+            <li><a href="hooksadvanced.html">Advanced Hooks</a></li>
+          </ul>
+    </div>
+    <div class="content">
+      <h1>Hooks in React.js</h1>
+      <p>React Hooks are a feature introduced in React 16.8 that allows you to use state and other React features without writing a class component.</p>
+
+      <h2>Why Use Hooks?</h2>
+      <p>Hooks provide a more concise and readable way to write React components. They allow you to reuse stateful logic across components, resulting in more modular and maintainable code. Hooks also enable functional components to have state and side effects, previously only possible with class components.</p>
+
+      <h2>Commonly Used Hooks</h2>
+      <p>Here are some commonly used hooks:</p>
+      <ul>
+        <li><strong>useState:</strong> Used to manage state in functional components.</li>
+        <li><strong>useEffect:</strong> Used to perform side effects in functional components, such as fetching data or subscribing to events.</li>
+        <li><strong>useContext:</strong> Used to access the context values in functional components.</li>
+        <li><strong>useReducer:</strong> Used to manage complex state and state transitions.</li>
+        <li><strong>useCallback:</strong> Used to memoize functions and prevent unnecessary re-renders.</li>
+        <li><strong>useMemo:</strong> Used to memoize expensive computations and prevent unnecessary re-computations.</li>
+        <li><strong>useRef:</strong> Used to hold mutable values across renders, similar to instance variables in class components.</li>
+        <li><strong>useLayoutEffect:</strong> Similar to useEffect, but fires synchronously after all DOM mutations.</li>
+        <li><strong>useImperativeHandle:</strong> Used to customize the instance value that is exposed to parent components when using ref.</li>
+        <li><strong>useDebugValue:</strong> Used to display a label for custom hooks in React DevTools.</li>
+      </ul>
+
+      <h2>Example: useState Hook</h2>
+      <p>The useState hook allows you to add state to functional components. Here's an example:</p>
+
+      <pre><code class="language-jsx">
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
+      &lt;button onClick={() => setCount(count - 1)}&gt;Decrement&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Counter;
+      </code></pre>
+
+      <p>In the above example, the `useState` hook is used to declare a state variable `count` with an initial value of 0. The `setCount` function is used to update the `count` value. The component renders the current count value and provides buttons to increment and decrement it.</p>
+
+      <p>This is just a simple example to demonstrate the usage of the `useState` hook. You can use other hooks in a similar fashion to enhance your React components.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-jsx.min.js"></script>
+</body>
+</html>

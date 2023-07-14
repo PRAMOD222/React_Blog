@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React.js Blog - DOM</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hooks.html">Hooks</a></li>
+            <li><a href="state.html">State</a></li>
+            <li><a href="props.html">Props</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li><a href="router.html">React Router</a></li>
+            <li><a href="dom.html">React DOM</a></li>
+            <li><a href="context.html">Context</a></li>
+            <li><a href="lifecycle.html">Lifecycle Methods</a></li>
+            <li><a href="virtualdom.html">Virtual DOM</a></li>
+            <li><a href="styling.html">Styling in React</a></li>
+            <li><a href="forms.html">Forms and User Input</a></li>
+            <li><a href="ajax.html">AJAX and Data Fetching</a></li>
+            <li><a href="errorhandling.html">Error Handling</a></li>
+            <li><a href="testing.html">Testing in React</a></li>
+            <li><a href="performance.html">Performance Optimization</a></li>
+            <li><a href="deployment.html">Deployment Strategies</a></li>
+            <li><a href="redux.html">Redux State Management</a></li>
+            <li><a href="contextapi.html">Context API</a></li>
+            <li><a href="hooksadvanced.html">Advanced Hooks</a></li>
+          </ul>
+    </div>
+    <div class="content">
+      <h1>DOM Manipulation in React.js</h1>
+      <p>React provides a virtual representation of the DOM (Document Object Model) and efficiently manages updates to the real DOM. It abstracts away the complexity of direct DOM manipulation, making it easier to build interactive user interfaces.</p>
+
+      <h2>Why Use Virtual DOM?</h2>
+      <p>The Virtual DOM is a lightweight copy of the actual DOM that React uses to determine the most efficient way to update the UI. By comparing the virtual DOM with the real DOM, React identifies and applies only the necessary changes, resulting in optimal performance and better user experience.</p>
+
+      <h2>Using the Virtual DOM in React</h2>
+      <p>In React, you manipulate the virtual DOM by defining components and rendering them using JSX. React then handles the reconciliation process to efficiently update the actual DOM.</p>
+
+      <h2>Example: Creating and Rendering a Component</h2>
+      <p>Here's an example of creating a component and rendering it to the DOM:</p>
+
+      <pre><code class="language-jsx">
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component {
+  render() {
+    return &lt;h1&gt;Hello, React DOM!&lt;/h1&gt;;
+  }
+}
+
+ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
+      </code></pre>
+
+      <p>In the above example, the `App` component is defined as a class component that extends `React.Component`. The `render` method returns JSX to render a heading element.</p>
+
+      <p>The `ReactDOM.render` function is then called to render the `App` component to the real DOM. It selects the DOM element with the `id` of `root` and replaces its contents with the rendered component.</p>
+
+      <h2>Conclusion</h2>
+      <p>The Virtual DOM in React provides an efficient way to update and manipulate the actual DOM. By using the virtual representation of the UI, React optimizes the rendering process and ensures high-performance user interfaces.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-jsx.min.js"></script>
+</body>
+</html>

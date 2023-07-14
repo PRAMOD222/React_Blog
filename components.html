@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React.js Blog - Components</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hooks.html">Hooks</a></li>
+            <li><a href="state.html">State</a></li>
+            <li><a href="props.html">Props</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li><a href="router.html">React Router</a></li>
+            <li><a href="dom.html">React DOM</a></li>
+            <li><a href="context.html">Context</a></li>
+            <li><a href="lifecycle.html">Lifecycle Methods</a></li>
+            <li><a href="virtualdom.html">Virtual DOM</a></li>
+            <li><a href="styling.html">Styling in React</a></li>
+            <li><a href="forms.html">Forms and User Input</a></li>
+            <li><a href="ajax.html">AJAX and Data Fetching</a></li>
+            <li><a href="errorhandling.html">Error Handling</a></li>
+            <li><a href="testing.html">Testing in React</a></li>
+            <li><a href="performance.html">Performance Optimization</a></li>
+            <li><a href="deployment.html">Deployment Strategies</a></li>
+            <li><a href="redux.html">Redux State Management</a></li>
+            <li><a href="contextapi.html">Context API</a></li>
+            <li><a href="hooksadvanced.html">Advanced Hooks</a></li>
+          </ul>
+    </div>
+    <div class="content">
+      <h1>Components in React.js</h1>
+      <p>Components are the building blocks of a React application. They allow you to split the user interface into small, reusable pieces, making it easier to manage and maintain your code.</p>
+
+      <h2>Types of Components</h2>
+      <p>In React, there are two types of components:</p>
+      <ul>
+        <li><strong>Functional Components:</strong> Functional components are defined as JavaScript functions and return JSX to describe the user interface. They are simpler and more lightweight compared to class components.</li>
+        <li><strong>Class Components:</strong> Class components are defined as JavaScript classes that extend the `React.Component` base class. They have additional features such as lifecycle methods and internal state management.</li>
+      </ul>
+
+      <h2>Example: Functional Component</h2>
+      <p>Here's an example of a functional component:</p>
+
+      <pre><code class="language-jsx">
+import React from 'react';
+
+const Greeting = (props) => {
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Hello, {props.name}!&lt;/h2&gt;
+      &lt;p&gt;Welcome to our website.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default Greeting;
+      </code></pre>
+
+      <p>In the above example, the `Greeting` component is defined as a JavaScript arrow function that accepts `props` as a parameter. It returns JSX to render a greeting message and a welcome message.</p>
+
+      <h2>Example: Class Component</h2>
+      <p>Here's an equivalent example of a class component:</p>
+
+      <pre><code class="language-jsx">
+import React from 'react';
+
+class Greeting extends React.Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;Hello, {this.props.name}!&lt;/h2&gt;
+        &lt;p&gt;Welcome to our website.&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default Greeting;
+      </code></pre>
+
+      <p>In this example, the `Greeting` component is defined as a class that extends the `React.Component` base class. The `render` method returns JSX to render the greeting message and the welcome message.</p>
+
+      <h2>Conclusion</h2>
+      <p>Components are a fundamental part of React, allowing you to build reusable and modular user interfaces. Whether you choose functional components or class components, React provides a flexible and powerful component-based architecture to develop your application.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-jsx.min.js"></script>
+</body>
+</html>

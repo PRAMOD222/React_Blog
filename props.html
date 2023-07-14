@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React.js Blog - Props</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hooks.html">Hooks</a></li>
+            <li><a href="state.html">State</a></li>
+            <li><a href="props.html">Props</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li><a href="router.html">React Router</a></li>
+            <li><a href="dom.html">React DOM</a></li>
+            <li><a href="context.html">Context</a></li>
+            <li><a href="lifecycle.html">Lifecycle Methods</a></li>
+            <li><a href="virtualdom.html">Virtual DOM</a></li>
+            <li><a href="styling.html">Styling in React</a></li>
+            <li><a href="forms.html">Forms and User Input</a></li>
+            <li><a href="ajax.html">AJAX and Data Fetching</a></li>
+            <li><a href="errorhandling.html">Error Handling</a></li>
+            <li><a href="testing.html">Testing in React</a></li>
+            <li><a href="performance.html">Performance Optimization</a></li>
+            <li><a href="deployment.html">Deployment Strategies</a></li>
+            <li><a href="redux.html">Redux State Management</a></li>
+            <li><a href="contextapi.html">Context API</a></li>
+            <li><a href="hooksadvanced.html">Advanced Hooks</a></li>
+          </ul>
+    </div>
+    <div class="content">
+      <h1>Props in React.js</h1>
+      <p>Props (short for properties) are a way to pass data from a parent component to its child components in React. They allow you to create reusable and configurable components.</p>
+
+      <h2>Why Use Props?</h2>
+      <p>Props are used to customize and configure child components based on the needs of the parent component. They allow you to pass data, functions, or even JSX elements as parameters to child components, making your application more flexible and dynamic.</p>
+
+      <h2>Using Props in React</h2>
+      <p>In React, you can pass props to a component in two ways:</p>
+      <ul>
+        <li><strong>Functional Components:</strong> In functional components, props are passed as function parameters.</li>
+        <li><strong>Class Components:</strong> In class components, props are accessed via the `this.props` object.</li>
+      </ul>
+
+      <h2>Example: Using Props in a Functional Component</h2>
+      <p>Here's an example of using props in a functional component:</p>
+
+      <pre><code class="language-jsx">
+import React from 'react';
+
+function Greeting(props) {
+  return &lt;h2&gt;Hello, {props.name}!&lt;/h2&gt;;
+}
+
+export default Greeting;
+      </code></pre>
+
+      <p>In the above example, the `Greeting` functional component receives `props` as its parameter. The component renders a greeting message with the value of the `name` prop passed from the parent component.</p>
+
+      <h2>Example: Using Props in a Class Component</h2>
+      <p>Here's an equivalent example of using props in a class component:</p>
+
+      <pre><code class="language-jsx">
+import React from 'react';
+
+class Greeting extends React.Component {
+  render() {
+    return &lt;h2&gt;Hello, {this.props.name}!&lt;/h2&gt;;
+  }
+}
+
+export default Greeting;
+      </code></pre>
+
+      <p>In this example, the `Greeting` class component extends `React.Component`. The `name` prop is accessed via `this.props` in the `render` method and used to render the greeting message.</p>
+
+      <p>By passing different values for the `name` prop when using the `Greeting` component, you can customize the greeting message accordingly.</p>
+
+      <h2>Conclusion</h2>
+      <p>Props play a crucial role in React by allowing components to be flexible, reusable, and customizable. They enable effective communication and data flow between components in your application.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-jsx.min.js"></script>
+</body>
+</html>

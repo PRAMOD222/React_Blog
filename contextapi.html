@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React.js Blog - Context API</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hooks.html">Hooks</a></li>
+            <li><a href="state.html">State</a></li>
+            <li><a href="props.html">Props</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li><a href="router.html">React Router</a></li>
+            <li><a href="dom.html">React DOM</a></li>
+            <li><a href="context.html">Context</a></li>
+            <li><a href="lifecycle.html">Lifecycle Methods</a></li>
+            <li><a href="virtualdom.html">Virtual DOM</a></li>
+            <li><a href="styling.html">Styling in React</a></li>
+            <li><a href="forms.html">Forms and User Input</a></li>
+            <li><a href="ajax.html">AJAX and Data Fetching</a></li>
+            <li><a href="errorhandling.html">Error Handling</a></li>
+            <li><a href="testing.html">Testing in React</a></li>
+            <li><a href="performance.html">Performance Optimization</a></li>
+            <li><a href="deployment.html">Deployment Strategies</a></li>
+            <li><a href="redux.html">Redux State Management</a></li>
+            <li><a href="contextapi.html">Context API</a></li>
+            <li><a href="hooksadvanced.html">Advanced Hooks</a></li>
+          </ul>
+    </div>
+    <div class="content">
+      <h1>Context API in React.js</h1>
+      <p>The Context API is a feature in React.js that allows you to share data between components without explicitly passing it through props at every level of the component tree. It provides a way to create global data stores that can be accessed by components within the tree, simplifying state management and component communication.</p>
+
+      <h2>Why Use the Context API?</h2>
+      <p>The Context API offers several advantages:</p>
+      <ul>
+        <li><strong>Global Data Sharing:</strong> Context allows you to share data globally within a component tree, eliminating the need to pass props through intermediate components.</li>
+        <li><strong>Reduced Prop Drilling:</strong> By using context, you can avoid "prop drilling" or passing props down multiple levels, which can make your code cleaner and more maintainable.</li>
+        <li><strong>Simple State Management:</strong> Context provides a simple way to manage shared state across components, reducing the need for complex state lifting or external libraries.</li>
+        <li><strong>Component Composition:</strong> Context enables better component composition by decoupling components from specific data sources.</li>
+      </ul>
+
+      <h2>Creating and Using Context</h2>
+      <p>To use the Context API, you typically follow these steps:</p>
+      <ol>
+        <li>Create a new context using the `createContext` function.</li>
+        <li>Provide a value to the context using the `Provider` component.</li>
+        <li>Consume the context value in child components using the `useContext` hook or the `Consumer` component.</li>
+      </ol>
+
+      <h2>Example: Using Context API</h2>
+      <p>Here's an example of using the Context API to provide a theme to multiple components:</p>
+
+      <pre><code class="language-jsx">
+import React, { createContext, useContext } from 'react';
+
+// Create a new context
+const ThemeContext = createContext('light');
+
+// Theme Provider component
+const ThemeProvider = ({ children }) => {
+  const theme = 'dark';
+
+  return (
+    &lt;ThemeContext.Provider value={theme}&gt;
+      {children}
+    &lt;/ThemeContext.Provider&gt;
+  );
+};
+
+// Component consuming the context
+const ThemedButton = () => {
+  const theme = useContext(ThemeContext);
+
+  return (
+    &lt;button style={{ background: theme === 'dark' ? 'black' : 'white' }}&gt;
+      {theme === 'dark' ? 'Dark Button' : 'Light Button'}
+    &lt;/button&gt;
+  );
+};
+
+// App component
+const App = () => {
+  return (
+    &lt;ThemeProvider&gt;
+      &lt;ThemedButton /&gt;
+    &lt;/ThemeProvider&gt;
+  );
+};
+
+export default App;
+      </code></pre>
+
+      <p>In the above example, a new context `ThemeContext` is created using the `createContext` function. The `ThemeProvider` component provides the theme value of `'dark'` to the context using the `Provider` component.</p>
+
+      <p>The `ThemedButton` component consumes the context value using the `useContext` hook. The button's background and text are styled based on the theme value.</p>
+
+      <p>The `App` component wraps the `ThemedButton` component with the `ThemeProvider`, making the theme available to the button.</p>
+
+      <h2>Conclusion</h2>
+      <p>The Context API is a powerful feature in React.js that simplifies global state management and component communication. By using context, you can share data across components without the need for excessive prop drilling. It's a great tool for managing shared state, themes, localization, and other application-level data.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-jsx.min.js"></script>
+</body>
+</html>

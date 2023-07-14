@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React.js Blog - Router</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hooks.html">Hooks</a></li>
+            <li><a href="state.html">State</a></li>
+            <li><a href="props.html">Props</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li><a href="router.html">React Router</a></li>
+            <li><a href="dom.html">React DOM</a></li>
+            <li><a href="context.html">Context</a></li>
+            <li><a href="lifecycle.html">Lifecycle Methods</a></li>
+            <li><a href="virtualdom.html">Virtual DOM</a></li>
+            <li><a href="styling.html">Styling in React</a></li>
+            <li><a href="forms.html">Forms and User Input</a></li>
+            <li><a href="ajax.html">AJAX and Data Fetching</a></li>
+            <li><a href="errorhandling.html">Error Handling</a></li>
+            <li><a href="testing.html">Testing in React</a></li>
+            <li><a href="performance.html">Performance Optimization</a></li>
+            <li><a href="deployment.html">Deployment Strategies</a></li>
+            <li><a href="redux.html">Redux State Management</a></li>
+            <li><a href="contextapi.html">Context API</a></li>
+            <li><a href="hooksadvanced.html">Advanced Hooks</a></li>
+          </ul>
+    </div>
+    <div class="content">
+      <h1>Router in React.js</h1>
+      <p>React Router is a popular library that allows you to handle routing in React applications. It provides a way to navigate between different components and render them based on the URL.</p>
+
+      <h2>Why Use React Router?</h2>
+      <p>React Router helps in building single-page applications (SPAs) with multiple views or pages. It enables the creation of dynamic and responsive user interfaces by managing the application's routing and rendering components based on the current URL.</p>
+
+      <h2>Using React Router</h2>
+      <p>React Router provides different components to handle routing in your application:</p>
+      <ul>
+        <li><strong>BrowserRouter:</strong> Handles routing using HTML5 history API, providing clean URLs without page refresh.</li>
+        <li><strong>Switch:</strong> Renders the first child `<Route>` or `<Redirect>` that matches the current URL.</li>
+        <li><strong>Route:</strong> Renders a component based on the URL path.</li>
+        <li><strong>Link:</strong> Provides a navigation link to navigate between different routes.</li>
+      </ul>
+
+      <h2>Example: Using React Router</h2>
+      <p>Here's an example of using React Router to handle routing in a React application:</p>
+
+      <pre><code class="language-jsx">
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+
+function App() {
+  return (
+    &lt;Router&gt;
+      &lt;div&gt;
+        &lt;nav&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+              &lt;Link to="/"&gt;Home&lt;/Link&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;Link to="/about"&gt;About&lt;/Link&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;Link to="/contact"&gt;Contact&lt;/Link&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+
+        &lt;Switch&gt;
+          &lt;Route exact path="/" component={Home} /&gt;
+          &lt;Route path="/about" component={About} /&gt;
+          &lt;Route path="/contact" component={Contact} /&gt;
+        &lt;/Switch&gt;
+      &lt;/div&gt;
+    &lt;/Router&gt;
+  );
+}
+
+export default App;
+      </code></pre>
+
+      <p>In the above example, the `App` component sets up the router using the `BrowserRouter` component from React Router. It defines different routes using the `Route` component, and the `Link` component provides navigation links for the routes.</p>
+
+      <p>When a user clicks on a navigation link, the `Switch` component renders the corresponding component based on the current URL path.</p>
+
+      <h2>Conclusion</h2>
+      <p>React Router is a powerful library that simplifies the routing process in React applications. It enables the creation of dynamic and interactive user interfaces by handling navigation between different components based on the URL.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-jsx.min.js"></script>
+</body>
+</html>

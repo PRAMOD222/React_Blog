@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Heebo:wght@200;300&family=Rubik&display=swap');
+
+  a{
+    text-decoration: none;
+    color: rgb(30, 30, 30);
+    
+  }
+  a:hover{
+    color: #007bff;
+    font-weight: 400;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', sans-serif;
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #e4f1ff;
+    padding: 20px;
+    font-family: 'Rubik', sans-serif;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    color: #007bff;
+    font-family: 'Belanosima', sans-serif;
+  }
+  
+  p {
+    color: #333;
+    line-height: 1.5;
+  }
+  
